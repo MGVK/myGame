@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-import static com.company.myContent.persX;
+import static com.company.myContent.*;
 
 public class window extends JFrame {
 private myContent content=new myContent();
@@ -22,18 +22,19 @@ private myContent content=new myContent();
     private class MyKey implements KeyListener{
         @Override
         public void keyTyped(KeyEvent e) {
+
+            if(e.getKeyCode()==87){
+
+                content.startMoving(UP);//up!
+            }
+            if(e.getKeyCode()==65)content.startMoving(LEFT);//left!
+            if(e.getKeyCode()==83)content.startMoving(DOWN);;//down!
+            if(e.getKeyCode()==68)content.startMoving(RIGHT);;//right!
         }
 
         @Override
         public void keyPressed(KeyEvent e) {
 
-            if(e.getKeyCode()==87){
-
-                move(20,0);//up!
-            }
-            if(e.getKeyCode()==65)move(20,0);//left!
-            if(e.getKeyCode()==83)move(20,0);//down!
-            if(e.getKeyCode()==68)move(20,0);//right!
 
         }
 
